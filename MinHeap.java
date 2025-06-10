@@ -191,7 +191,24 @@ public class MinHeap {
      * THIS IS YOUR ASSIGNMENT
      */
     private void heapifyUp() {
-    } // method heapifyUp
+        int child = this.usage - 1;
+        // child starts at the end where the newly added value is
+        int parent = parent(child);
+        // finds the parent for the newly added child
+        for (; child > 0 && this.underlying[child] < this.underlying[parent];
+        /*
+         * Does not need the first part of the for loop due to child and parent being defined earlier in the method.
+         * The for loop loops through the array checking the new element
+         * making sure the child isn't smaller than the parent.
+         */
+         child = parent, parent = parent(child)){
+            //sets the index for child to the old parent index
+            // finds the new index of the parent after childs index was updated
+            swap(child, parent);
+            // uses the swap method to switch the index of the parent and child
+        }
+    } // method heapifyUP
+    
 
     /**
      * This method is called after we remove the smallest element from the
